@@ -37,7 +37,59 @@ const genderOptions = [
 ];
 
 const Register = () => {
-  
+  const { mutate: handleRegister, isPending, isSuccess } = useRegistration();
+
+  const router = useRouter();
+  const methods = useForm({});
+  const { handleSubmit, reset } = methods;
+  const [isImageUploading, setIsImageUploading] = useState(false);
+  const [selectedProfilePicture, setSelectedProfilePicture] =
+    useState<File | null>(null);
+  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+
+  const uploadImageToFirebase = async (
+    imageFile: File
+  ): Promise<string | null | undefined> => {
+    const storageRef = ref(storage, `images/${imageFile.name}`);
+
+    setIsImageUploading(true);
+
+    try {
+      const snapshot = await uploadBytes(storageRef, imageFile);
+      const downloadUrl = await getDownloadURL(snapshot.ref);
+
+      return downloadUrl;
+    } catch (error) {
+      console.log("Error uploading image", error);
+      return null;
+    } finally {
+      setIsImageUploading(false);
+    }
+  };
+
+  const handleRemoveImage = () => {
+    setPreviewUrl(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
+
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+    const profilePicture = selectedProfilePicture
+      ? await uploadImageToFirebase(selectedProfilePicture)
+      : null;
+    const userData = {
+      ...data,
+      profilePicture,
+    };
+
+    await handleRegister(userData);
+
+    router.push("/login");
+    reset();
+    setPreviewUrl(null);
   };
 
   return (
