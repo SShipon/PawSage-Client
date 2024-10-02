@@ -91,9 +91,9 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold">Our Location</h3>
                   <p className="text-muted-foreground">
-                    8200, Cumilla, Bangladesh
+                    82000, Cumilla, Bangladesh
                     <br />
-                    # Open daily: 8AM - 8PM 
+                    Open daily: 9AM - 8PM 
                   </p>
                 </div>
               </div>
