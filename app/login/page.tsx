@@ -26,7 +26,19 @@ const Login = () => {
 
   const { handleSubmit, reset } = methods;
 
-}
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+    await handleLogin(data);
+    setLoading(true);
+    reset();
+  };
+
+  if (!isPending && isSuccess) {
+    if (redirect) {
+      router.push(redirect);
+    } else {
+      router.push("/");
+    }
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-green-100 flex flex-col items-center justify-center p-4">
