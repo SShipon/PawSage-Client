@@ -17,10 +17,16 @@ import { useUser } from "@/context/user.provider";
 import { redirect, useRouter, useSearchParams } from "next/navigation";
 
 const Login = () => {
-   
-  const handleSubmit =()=>{
-    console.log("this is hello ")
-  }
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirect = searchParams.get("redirect");
+  const { setLoading } = useUser();
+  const { mutate: handleLogin, isPending, isSuccess } = useLogin();
+  const methods = useForm();
+
+  const { handleSubmit, reset } = methods;
+
+}
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-green-100 flex flex-col items-center justify-center p-4">
