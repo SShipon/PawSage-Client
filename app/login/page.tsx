@@ -17,7 +17,10 @@ import { useUser } from "@/context/user.provider";
 import { redirect, useRouter, useSearchParams } from "next/navigation";
 
 const Login = () => {
-  
+   
+  const handleSubmit =()=>{
+    console.log("this is hello ")
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-green-100 flex flex-col items-center justify-center p-4">
