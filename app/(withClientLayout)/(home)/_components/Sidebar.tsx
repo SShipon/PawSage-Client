@@ -40,7 +40,17 @@ const Sidebar = ({ users, userData, premiumPosts }: { users: any; userData: any;
         </Card>
       </div>
 
-      
+      <Card>
+        <CardHeader>
+          <h1>Premium Posts</h1>
+        </CardHeader>
+        <CardBody>
+          
+              
+            
+          </div>
+        </CardBody>
+      </Card>
     </div>
   );
 };
