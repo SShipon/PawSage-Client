@@ -45,9 +45,36 @@ const Sidebar = ({ users, userData, premiumPosts }: { users: any; userData: any;
           <h1>Premium Posts</h1>
         </CardHeader>
         <CardBody>
-          
-              
-            
+          <div className="space-y-4">
+            {premiumPosts?.map(
+              ({
+                _id,
+                title,
+                thumbnail,
+              }: {
+                _id: string;
+                title: string;
+                thumbnail: string;
+              }) => (
+                <div key={_id} className="flex items-center space-x-3">
+                  <div className="w-16 h-16 bg-gray-200 rounded-md flex items-center justify-center">
+                    <Image
+                      src={thumbnail}
+                      alt={title}
+                      className="w-[64px] h-[64px] object-cover rounded-md"
+                      width={64}
+                      height={64}
+                    />
+                  </div>
+                  <div>
+                    <p className="font-medium">{title}</p>
+                    <p className="text-sm text-gray-500">
+                      Exclusive content for members
+                    </p>
+                  </div>
+                </div>
+              )
+            )}
           </div>
         </CardBody>
       </Card>
