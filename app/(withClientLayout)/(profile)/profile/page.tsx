@@ -22,7 +22,22 @@ const ProfilePage = async () => {
 
   return (
     <Container>
-     
+      <div className="border border-gray-500">
+        <Image
+          width={1220}
+          height={550}
+          loading="lazy"
+          alt="this is profile banner image"
+          src={
+            "https://images.unsplash.com/photo-1450778869180-41d0601e046e?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          }
+          placeholder="blur"
+          className="w-full h-96 object-cover "
+          blurDataURL={
+            "https://images.unsplash.com/photo-1450778869180-41d0601e046e?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          }
+        />
+      </div>
 
       <div className="my-5">
         <div className="flex justify-between items-center mb-5">
