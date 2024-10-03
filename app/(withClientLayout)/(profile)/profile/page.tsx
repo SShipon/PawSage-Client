@@ -61,7 +61,23 @@ const ProfilePage = async () => {
         <Divider />
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
           <div className="col-span-2 my-5">
-          
+            <Card>
+              <CardHeader>About</CardHeader>
+              <CardBody className="flex flex-col gap-2">
+                <div className="flex gap-2 items-center">
+                  <Phone />
+                  <span>{userInfo?.data?.phone}</span>
+                </div>
+                <div className="flex gap-2 items-center">
+                  <MapPinHouse />
+                  <span>{userInfo?.data?.address}</span>
+                </div>
+                <div className="flex gap-2 items-center">
+                  <ShieldQuestion />
+                  <span>{userInfo?.data?.gender}</span>
+                </div>
+              </CardBody>
+            </Card>
           </div>
 
           <div className="col-span-3 my-5 flex flex-col gap-5">
