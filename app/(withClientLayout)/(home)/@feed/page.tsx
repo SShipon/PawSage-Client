@@ -18,7 +18,7 @@ const Feed = async ({ searchParams }: { searchParams: any }) => {
     limit: 10,
   });
 
-  const userData = await currentUser();
+  const userData = await currentUser() ;
 
   const CreatePostElement = userData?.email ? await CreatePost() : null;
 
