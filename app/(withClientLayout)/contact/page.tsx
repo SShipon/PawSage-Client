@@ -91,9 +91,9 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold">Our Location</h3>
                   <p className="text-muted-foreground">
-                    8200, Barishal, Bangladesh
+                    8200, Cumilla, Bangladesh
                     <br />
-                    Open daily: 8AM - 8PM
+                    # Open daily: 8AM - 8PM 
                   </p>
                 </div>
               </div>
@@ -113,7 +113,7 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold">Email</h3>
                   <p className="text-muted-foreground">
-                    oxshipon@gmail.com
+                    oxshipon9@gmail.com
                     <br />
                     oxshpon@gmail.com
                   </p>
